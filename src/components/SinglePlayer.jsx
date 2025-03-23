@@ -1,5 +1,6 @@
 import { useGetPuppyByIdQuery } from "../API/index";
 import { useParams } from "react-router-dom";
+import "../app.css";
 
 export default function SinglePlayer() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export default function SinglePlayer() {
       <div>
         <h1 className="title">Single Player</h1>
       </div>
-      <div className="all-players-wrapper">
+      <div>
         {response.isLoading ? (
           <p>Loading...</p>
         ) : (
