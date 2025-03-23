@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./app.css";
 import { Routes, Route, Link } from "react-router-dom";
 import NewPlayer from "./components/NewPlayer";
 import AllPlayers from "./components/AllPlayers";
@@ -13,7 +13,6 @@ function App() {
         <div className="nav-bar">
           <Link to="/">Home</Link>
           <Link to="/new-player">New Player</Link>
-          <Link to="/singleplayer">Single Player</Link>
           <Link to="/all-players">All Players</Link>
         </div>
       </div>
@@ -21,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-player" element={<NewPlayer />} />
-          <Route path="/singleplayer" element={<SinglePlayer />} />
+          <Route path="/singleplayer/:id" element={<SinglePlayer />} />
           <Route path="/all-players" element={<AllPlayers />} />
         </Routes>
       </div>

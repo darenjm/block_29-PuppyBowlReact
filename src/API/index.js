@@ -11,7 +11,19 @@ export const authAPI = createApi({
         url: "/players",
       }),
     }),
+    getPuppyById: builder.query({
+      query: (id) => ({
+        url: `/players/${id}`,
+      }),
+    }),
+    postNewPuppy: builder.mutation({
+      query: (body) => ({
+        url: "/players",
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
-export const { useGetPuppiesQuery } = authAPI;
+export const { useGetPuppiesQuery, useGetPuppyByIdQuery, usePostNewPuppyMutation } = authAPI;
