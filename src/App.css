@@ -1,11 +1,16 @@
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
 body {
   box-sizing: border-box;
 }
-
 
 #root {
   max-width: 1280px;
@@ -17,7 +22,7 @@ body {
 .nav-bar {
   display: flex;
   gap: 48px;
-  margin:0 auto;
+  margin: 0 auto;
   background: lightgreen;
   justify-content: center;
   padding: 16px;
@@ -25,11 +30,11 @@ body {
   max-width: 100%;
 }
 
-.title{
+.title {
   margin: 32px 0;
 }
 
-.all-players-wrapper{
+.all-players-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -51,12 +56,12 @@ body {
 .player-card img {
   width: 150px;
   height: 150px;
-  border-radius:100%;
+  border-radius: 100%;
   object-fit: cover;
   margin-bottom: 16px;
 }
 
-.AddPlayer{
+.AddPlayer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,3 +84,4 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
+

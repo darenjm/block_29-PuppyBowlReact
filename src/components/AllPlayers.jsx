@@ -1,4 +1,8 @@
-import { useGetPuppiesQuery, usePostNewPuppyMutation } from "../API/index";
+import {
+  useGetPuppiesQuery,
+  usePostNewPuppyMutation,
+  useDeletePuppyMutation,
+} from "../API/index";
 import "../app.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -8,6 +12,7 @@ export default function AllPlayers() {
   console.log(response);
 
   const [postNewPuppy] = usePostNewPuppyMutation();
+  const [deletePuppy] = useDeletePuppyMutation();
 
   const [puppyname, setPuppyname] = useState("");
   const [puppybreed, setPuppybreed] = useState("");
@@ -27,6 +32,10 @@ export default function AllPlayers() {
     setPuppybreed("");
   };
 
+  const deletePuppyBtn = (id) => {
+    deletePuppy(id);
+  };
+
   return (
     <>
       <div>
@@ -38,13 +47,17 @@ export default function AllPlayers() {
         ) : (
           response.data.data.players.map((player) => {
             return (
-              <Link to={`/singleplayer/${player.id}`} className="player-card">
-                <div>
+              <div className="player-card">
+                <Link to={`/singleplayer/${player.id}`}>
                   <img src={player.imageUrl} />
+
                   <h2>{player.name}</h2>
                   <p>{player.breed}</p>
-                </div>
-              </Link>
+                </Link>
+                <button onClick={() => deletePuppyBtn(player.id)}>
+                  Delete
+                </button>
+              </div>
             );
           })
         )}

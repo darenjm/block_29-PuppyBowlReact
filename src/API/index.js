@@ -26,6 +26,13 @@ export const authAPI = createApi({
       }),
       invalidatesTags: ["Players"],
     }),
+    deletePuppy: builder.mutation({
+      query: (id) => ({
+        url: `/players/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Players"],
+    }),
   }),
 });
 
@@ -33,4 +40,5 @@ export const {
   useGetPuppiesQuery,
   useGetPuppyByIdQuery,
   usePostNewPuppyMutation,
+  useDeletePuppyMutation,
 } = authAPI;
