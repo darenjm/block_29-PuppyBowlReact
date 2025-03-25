@@ -3,13 +3,15 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const authAPI = createApi({
   reducerPath: "authPath",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://fsa-puppy-bowl.herokuapp.com/api/2411-ftb-et-web-pt",
+    baseUrl: "https://fsa-puppy-bowl.herokuapp.com/api/2411-ftb-et-web-pt-djm",
   }),
+  tagTypes: ["Players"],
   endpoints: (builder) => ({
     getPuppies: builder.query({
       query: () => ({
         url: "/players",
       }),
+      providesTags: ["Players"],
     }),
     getPuppyById: builder.query({
       query: (id) => ({
@@ -22,8 +24,13 @@ export const authAPI = createApi({
         method: "POST",
         body,
       }),
+      invalidatesTags: ["Players"],
     }),
   }),
 });
 
-export const { useGetPuppiesQuery, useGetPuppyByIdQuery, usePostNewPuppyMutation } = authAPI;
+export const {
+  useGetPuppiesQuery,
+  useGetPuppyByIdQuery,
+  usePostNewPuppyMutation,
+} = authAPI;

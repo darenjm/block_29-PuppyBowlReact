@@ -20,6 +20,13 @@ export default function AllPlayers() {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    postNewPuppy({ name: puppyname, breed: puppybreed });
+    setPuppyname("");
+    setPuppybreed("");
+  };
+
   return (
     <>
       <div>
@@ -44,18 +51,24 @@ export default function AllPlayers() {
       </div>
       <section className="AddPlayer">
         <h2>Add new player</h2>
-        <form>
+
+        <form onSubmit={handleSubmit}>
           <label>
-            Name: <input value={puppyname} name="name" placeholder="Name" />
+            Name:{" "}
+            <input
+              value={puppyname}
+              name="name"
+              placeholder="Name"
+              onChange={handleChange}
+            />
           </label>
           <label>
             Breed:{" "}
             <input
-              type=""
               name="breed"
               placeholder="Breed"
               value={puppybreed}
-              onChange=""
+              onChange={handleChange}
             />
           </label>
           <input type="submit" />
