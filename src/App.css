@@ -51,9 +51,35 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: darkblue;
+}
+.player-link {
+  color: white;
 }
 
 .player-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.single-player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 125px;
+  padding: 32px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  background: darkblue;
+}
+
+.single-player-card img {
   width: 150px;
   height: 150px;
   border-radius: 100%;
@@ -84,4 +110,3 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
-

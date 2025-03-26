@@ -15,7 +15,7 @@ export default function SinglePlayer() {
         {response.isLoading ? (
           <p>Loading...</p>
         ) : (
-          <div className="player-card">
+          <div className="single-player-card">
             <img src={response.data.data.player.imageUrl} />
             <h2>{response.data.data.player.name}</h2>
             <p>{response.data.data.player.breed}</p>

@@ -48,7 +48,7 @@ export default function AllPlayers() {
           response.data.data.players.map((player) => {
             return (
               <div className="player-card">
-                <Link to={`/singleplayer/${player.id}`}>
+                <Link to={`/singleplayer/${player.id}`} className="player-link">
                   <img src={player.imageUrl} />
 
                   <h2>{player.name}</h2>
